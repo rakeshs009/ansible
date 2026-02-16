@@ -1,0 +1,16 @@
+---
+  - name:  this is my first play
+    hosts: all
+    tasks:
+      - name: this is my first task
+        debug:
+          msg: "hellow world"
+      - name: this is my second task
+        debug:
+          msg: "this is my seconf task"
+  - name: this is my seocnd play
+    hosts: all
+    tasks: 
+      - name: this is my third task
+        debug:
+          msg: " this uis my third task"
