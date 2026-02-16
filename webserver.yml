@@ -9,7 +9,6 @@
        apt:
          name: apache2
          state: present
-         enabled: yes
          update_cache: yes
      - name: start apache
        service:
