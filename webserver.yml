@@ -9,7 +9,8 @@
        apt:
          name: apache2
          state: present
-         enable: yes
+         enabled: yes
+         update_cache: yes
      - name: start apache
        service:
          name: apache2
@@ -19,9 +20,5 @@
        copy: 
          content: "welcome to  my ansible webserver"
          dest: /var/www/html/index.html
-     - name: allow firewall for apache
-       ufw:
-          rule: allow
-          name: "Apache Full"
 
     
