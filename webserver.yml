@@ -1,6 +1,9 @@
 ---
  - name: my first webserver setup
    hosts: web1
+   become: yes
+   become_method : sudo
+   become_user: root
    tasks:
      - name: install apache
        apt:
@@ -18,8 +21,7 @@
          dest: /var/www/html/index.html
      - name: allow firewall for apache
        ufw:
-         rule: allow
-         name: "apache all ports"
-     
+          rule: allow
+          name: "Apache Full"
 
     
