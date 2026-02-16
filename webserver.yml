@@ -1,0 +1,25 @@
+---
+ - name: my first webserver setup
+   hosts: web1
+   tasks:
+     - name: install apache
+       apt:
+         name: apache2
+         state: present
+         enable: yes
+     - name: start apache
+       service:
+         name: apache2
+         state: started
+         enabled: yes
+     - name: create the index.html file
+       copy: 
+         content: "welcome to  my ansible webserver"
+         dest: /var/www/html/index.html
+     - name: allow firewall for apache
+       ufw:
+         rule: allow
+         name: "apache all ports"
+     
+
+    
